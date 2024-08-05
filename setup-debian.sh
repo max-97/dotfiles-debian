@@ -38,6 +38,10 @@ rm -rf lazygit
 # Create symlinks
 dotfiles_dir=~/.dotfiles-debian
 ln -sf $dotfiles_dir/.zshrc ~/.zshrc
+ln -sf $dotfiles_dir/.p10k.zsh ~/.p10k.zsh
 
 # ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
