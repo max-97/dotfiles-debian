@@ -34,3 +34,10 @@ tar xf lazygit.tar.gz lazygit
 install lazygit /usr/local/bin
 rm -rf lazygit.tar.gz
 rm -rf lazygit
+
+# Create symlinks
+dotfiles_dir=~/.dotfiles-debian
+ln -sf $dotfiles_dir/.zshrc ~/.zshrc
+
+# ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
