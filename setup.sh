@@ -7,7 +7,7 @@ sudo apt update && sudo apt upgrade -y
 echo "***"
 echo "Basic programs and libs installation"
 echo "***"
-sudo apt install -y linux-image-amd64 firmware-linux-nonfree curl vim git inxi build-essential zsh tmux ripgrep python3 python3-venv stow
+sudo apt install -y linux-image-amd64 firmware-linux-nonfree curl vim git inxi build-essential zsh tmux ripgrep python3 python3-venv stow fzf
 
 echo "***"
 echo "Add additional repos"
@@ -41,7 +41,7 @@ install lazygit /usr/local/bin
 rm -rf lazygit.tar.gz
 rm -rf lazygit
 
-dotfiles_dir=~/.dotfiles-debian
+dotfiles_dir=~/.dotfiles
 cd $dotfiles_dir
 stow .
 
