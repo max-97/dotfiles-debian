@@ -9,12 +9,14 @@ sudo apt update && sudo apt upgrade -y
 echo "***"
 echo "Basic programs and libs installation"
 echo "***"
-sudo apt install -y linux-image-amd64 firmware-linux-nonfree curl vim git inxi build-essential zsh tmux ripgrep python3 python3-venv stow
+sudo apt install -y linux-image-amd64 firmware-linux-nonfree curl vim git inxi build-essential zsh tmux ripgrep python3 python3-venv stow bat
 
 git clone --depth 1 https://github.com/junegunn/fzf.git $dotfiles_dir/.local/share/.fzf
 $dotfiles_dir/.local/share/.fzf/install
 
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+cargo install fd-find
 
 echo "***"
 echo "Add additional repos"
@@ -22,7 +24,6 @@ echo "***"
 # brave
 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-
 
 echo "***"
 echo "Install additional apps"
