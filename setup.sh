@@ -51,6 +51,7 @@ rm -rf lazygit
 
 cd $dotfiles_dir
 stow .
+ln -s /usr/bin/batcat ~/.local/bin/bat
 
 # ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
