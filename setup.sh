@@ -16,6 +16,7 @@ $dotfiles_dir/.local/share/.fzf/install
 
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
+# TODO add alacritty installation from github
 cargo install fd-find git-delta eza tlrc
 
 echo "***"
