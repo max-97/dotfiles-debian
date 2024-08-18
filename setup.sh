@@ -54,6 +54,9 @@ cd $dotfiles_dir
 stow .
 ln -s /usr/bin/batcat ~/.local/bin/bat
 
+mkdir -p ~/.local/wallpapers
+git clone https://github.com/zhichaoh/catppuccin-wallpapers.git ~/.local/wallpapers/catppuccin-wallpapers
+
 # Bat themes
 mkdir -p "$(bat --config-dir)/themes"
 wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Latte.tmTheme
@@ -62,9 +65,3 @@ wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/
 wget -P "$(bat --config-dir)/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 
 bat cache --build
-
-# ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
