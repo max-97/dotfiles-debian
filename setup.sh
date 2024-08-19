@@ -50,6 +50,9 @@ install lazygit /usr/local/bin
 rm -rf lazygit.tar.gz
 rm -rf lazygit
 
+# Install oh-my-posh
+curl -s https://ohmyposh.dev/install.sh | bash -s
+
 # Tmux Plugin Manager
 git clone https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 
