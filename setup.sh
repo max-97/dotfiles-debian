@@ -41,7 +41,7 @@ mkdir -p /opt/nvim
 sudo mv ./nvim.appimage /opt/nvim/nvim
 
 # NvChad
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+git clone https://github.com/NvChad/starter ~/.config/nvim --depth 1
 
 # Lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
