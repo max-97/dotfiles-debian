@@ -5,13 +5,14 @@
 ---@type ChadrcConfig
 local M = {}
 
-M = {
-  base46 = { theme = "catppuccin", },
+M.base46 = { theme = "catppuccin", }
 
-  ui = {
-    statusline = { theme = "default", },
+M.ui = {
+    statusline = {
+        theme = "default",
+        separator_style = "round",
+    },
     tabufline = { enabled = false },
-  },
 }
 
 return M
