@@ -7,16 +7,16 @@ return {
         harpoon:setup()
 
         local map = vim.keymap.set
-        map("n", "<leader>a", function() harpoon:list():add() end)
-        map("n", "<A-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+        map("n", "<leader>a", function() harpoon:list():add() end, { desc="add to harpoon"} )
+        map("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc="toggle harpoon ui"})
 
-        map("n", "<A-j>", function() harpoon:list():select(1) end)
-        map("n", "<A-k>", function() harpoon:list():select(2) end)
-        map("n", "<A-l>", function() harpoon:list():select(3) end)
-        map("n", "<A-;>", function() harpoon:list():select(4) end)
+        map("n", "<C-h>", function() harpoon:list():select(1) end, { desc="Go to 1st harpoon file"})
+        map("n", "<C-j>", function() harpoon:list():select(2) end, { desc="Go to 2nd harpoon file"})
+        map("n", "<C-k>", function() harpoon:list():select(3) end, { desc="Go to 3rd harpoon file"})
+        map("n", "<C-l>", function() harpoon:list():select(4) end, { desc="Go to 4th harpoon file"})
 
-        map("n", "<A-S-P>", function() harpoon:list():prev() end)
-        map("n", "<A-S-N>", function() harpoon:list():next() end)
+        map("n", "hp", function() harpoon:list():prev() end, { desc="Go to previous harpoon file"})
+        map("n", "hn", function() harpoon:list():next() end, { desc="Go to next harpoon file"})
     end,
     lazy = false,
 }
