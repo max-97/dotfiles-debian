@@ -3,7 +3,7 @@ return {
 	tag = "stable",
 	event = { "BufRead Cargo.toml" },
 	config = function()
-	    local crates = require("creates")
+	    local crates = require("crates")
         crates.setup()
 
         local map = vim.keymap.set
