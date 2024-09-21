@@ -1,18 +1,24 @@
--- This file needs to have same structure as nvconfig.lua 
+-- This file needs to have same structure as nvconfig.lua
 -- https://github.com/NvChad/ui/blob/v2.5/lua/nvconfig.lua
--- Please read that file to know all available options :( 
+-- Please read that file to know all available options :(
 
 ---@type ChadrcConfig
-local M = {}
-
-M.base46 = { theme = "catppuccin", }
-
-M.ui = {
-    statusline = {
-        theme = "default",
-        separator_style = "round",
-    },
-    tabufline = { enabled = false },
+local M = {
+	base46 = { theme = "catppuccin" },
+	ui = {
+		statusline = {
+			theme = "default",
+			separator_style = "round",
+		},
+		tabufline = { enabled = false },
+	},
+	mason = {
+		pkgs = {
+			"rust-analyzer",
+			"debugpy",
+			"ruff",
+		},
+	},
 }
 
 return M
