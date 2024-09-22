@@ -14,9 +14,9 @@ local M = {
 	},
 	mason = {
 		pkgs = {
-			"rust-analyzer",
 			"debugpy",
 			"ruff",
+			"codelldb",
 		},
 	},
 }

@@ -1,5 +1,12 @@
 return {
 	"neovim/nvim-lspconfig",
+	opts = {
+		setup = {
+			rust_analyzer = function()
+				return true -- prevent Mason from setting up lspconfig.rust_analyzer, see rustaceanvim docs
+			end,
+		},
+	},
 	config = function()
 		-- load defaults i.e lua_lsp
 		require("nvchad.configs.lspconfig").defaults()
