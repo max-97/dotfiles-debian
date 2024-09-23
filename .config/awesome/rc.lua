@@ -601,3 +601,8 @@ client.connect_signal("unfocus", function(c)
 end)
 -- }}}
 
+-- Autostart applications
+awful.spawn.with_shell("compton")
+awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("alacritty")
+
