@@ -10,7 +10,7 @@ echo "***"
 echo "Basic programs and libs installation"
 echo "***"
 sudo apt install -y linux-image-amd64 firmware-linux-nonfree curl vim git inxi build-essential zsh tmux ripgrep python3 python3-venv stow bat thefuck xsel \
-	libgconf-2-4 libc++1 gconf2-common libc++abi1 graphviz lldb
+	libgconf-2-4 libc++1 gconf2-common libc++abi1 graphviz lldb awesome
 
 git clone --depth 1 https://github.com/junegunn/fzf.git $dotfiles_dir/.local/share/.fzf
 $dotfiles_dir/.local/share/.fzf/install
