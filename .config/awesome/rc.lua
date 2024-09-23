@@ -197,11 +197,11 @@ local function set_wallpaper(s)
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", set_wallpaper)
+-- screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
 	-- Wallpaper
-	set_wallpaper(s)
+	-- set_wallpaper(s)
 
 	-- Each screen has its own tag table.
 	awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
@@ -602,7 +602,4 @@ end)
 -- }}}
 
 -- Autostart applications
-awful.spawn.with_shell("compton")
-awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("alacritty")
-
+awful.spawn("compton")
