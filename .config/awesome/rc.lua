@@ -73,19 +73,19 @@ end)
 awesome.register_xproperty("MANUAL", "number")
 
 -- This is used later as the default terminal and editor to run.
-terminal = config.user.terminal --"kitty" --"urxvt"
-terminal2 = config.user.terminal2nd
-editor = os.getenv("EDITOR") or "lvim"
-editor_cmd = terminal2 .. " -e " .. editor
+local terminal = config.user.terminal --"kitty" --"urxvt"
+local terminal2 = config.user.terminal2nd
+local editor = os.getenv("EDITOR") or "lvim"
+local editor_cmd = terminal2 .. " -e " .. editor
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
-altkey = "Mod1"
-ctrlkey = "Control"
+local modkey = "Mod4"
+local altkey = "Mod1"
+local ctrlkey = "Control"
 -- }}}
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it

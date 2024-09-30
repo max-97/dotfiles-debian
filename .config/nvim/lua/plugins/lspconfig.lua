@@ -42,7 +42,7 @@ return {
 							vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy",
 							"${3rd}/luv/library",
 							"${3rd}/busted/library",
-							"/usr/share/awesome/lib",
+							"/usr/local/share/awesome/lib",
 							"/usr/share/lua",
 						},
 						maxPreload = 100000,
