@@ -43,6 +43,7 @@ beautiful.init(theme_path)
 terminal = "alacritty"
 editor = "nvim"
 editor_cmd = terminal .. " -e " .. editor
+browser = "brave-browser"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -74,7 +75,7 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({
 	items = {
-		{ "awesome", myawesomemenu, beautiful.awesome_icon },
+		{ "awesome", myawesomemenu },
 		{ "open terminal", terminal },
 	},
 })
@@ -263,7 +264,10 @@ awful.keyboard.append_global_keybindings({
 			history_path = awful.util.get_cache_dir() .. "/history_eval",
 		})
 	end, { description = "lua execute prompt", group = "awesome" }),
-	awful.key({ modkey }, "Return", function()
+	awful.key({ modkey }, "b", function()
+		awful.spawn(browser)
+	end, { description = "open browser", group = "launcher" }),
+	awful.key({ modkey }, "t", function()
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey }, "r", function()
@@ -449,7 +453,7 @@ client.connect_signal("request::default_keybindings", function()
 		awful.key({ modkey }, "o", function(c)
 			c:move_to_screen()
 		end, { description = "move to screen", group = "client" }),
-		awful.key({ modkey }, "t", function(c)
+		awful.key({ modkey, "Shift" }, "t", function(c)
 			c.ontop = not c.ontop
 		end, { description = "toggle keep on top", group = "client" }),
 		awful.key({ modkey }, "n", function(c)
@@ -486,6 +490,7 @@ ruled.client.connect_signal("request::rules", function()
 			raise = true,
 			screen = awful.screen.preferred,
 			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+			maximized = false,
 			floating = false,
 		},
 	})
@@ -526,12 +531,6 @@ ruled.client.connect_signal("request::rules", function()
 		rule_any = { type = { "normal", "dialog" } },
 		properties = { titlebars_enabled = true },
 	})
-
-	-- Set Firefox to always map on the tag named "2" on screen 1.
-	-- ruled.client.append_rule {
-	--     rule       = { class = "Firefox"     },
-	--     properties = { screen = 1, tag = "2" }
-	-- }
 end)
 -- }}}
 
