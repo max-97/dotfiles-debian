@@ -1,8 +1,6 @@
---------------------------------
---         Catppuccin         --
--- Theme adapted from ayamir. --
--- github.com/ayamir/dotfiles --
---------------------------------
+---------------------------
+-- Default awesome theme --
+---------------------------
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
@@ -14,7 +12,7 @@ local theme = {}
 
 theme.font = "JetBrainsMono Nerd Font 10"
 
-theme.useless_gap = 2
+theme.useless_gap = 5
 theme.border_width = 1
 
 theme.black = "#1e1e28"
@@ -37,13 +35,13 @@ theme.bg_minimize = theme.grey
 theme.bg_systray = theme.black
 
 theme.fg_normal = theme.white
-theme.fg_focus = theme.purple
+theme.fg_focus = theme.orange
 theme.fg_urgent = theme.red
 theme.fg_minimize = theme.light_white
 
-theme.border_color_normal = theme.blue
-theme.border_color_active = theme.purple
-theme.border_color_marked = theme.red
+theme.border_normal = theme.blue
+theme.border_focus = theme.green
+theme.border_marked = theme.purple
 
 -- There are other variable sets
 -- overriding the default one when
@@ -65,22 +63,22 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_
 theme.taglist_disable_icon = true
 
 -- Variables set for theming notifications:
--- notification_font
--- notification_[bg|fg]
--- notification_[width|height|margin]
--- notification_[border_color|border_width|shape|opacity]
 theme.notification_font = "JetBrainsMono Nerd Font 12"
 theme.notification_margin = dpi(10)
 theme.notification_border_color = theme.border_normal
 theme.notification_border_width = theme.border_width
 theme.notification_icon_size = dpi(60)
 
+-- notification_[bg|fg]
+-- notification_[width|height|margin]
+-- notification_[border_color|border_width|shape|opacity]
+
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
-theme.menu_height = dpi(16)
-theme.menu_width = dpi(140)
+theme.menu_height = dpi(15)
+theme.menu_width = dpi(100)
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -138,7 +136,7 @@ theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
+theme.icon_theme = "/usr/share/icons/Papirus"
 
 return theme
 
