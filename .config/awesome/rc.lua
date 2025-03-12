@@ -208,6 +208,34 @@ screen.connect_signal("request::desktop_decoration", function(s)
 				awful.client.focus.byidx(1)
 			end),
 		},
+		style = {
+			border_width = 1,
+			border_color = "#c6aae8",
+			shape = gears.shape.rounded_bar,
+		},
+		layout = {
+			spacing = 10,
+			layout = wibox.layout.fixed.horizontal,
+		},
+		widget_template = {
+			{
+				wibox.widget.base.make_widget(),
+				forced_height = 5,
+				id = "background_role",
+				widget = wibox.container.background,
+			},
+			{
+				{
+					awful.widget.clienticon,
+					margins = 2,
+					widget = wibox.container.margin,
+				},
+				nil,
+				layout = wibox.layout.align.horizontal,
+			},
+			nil,
+			layout = wibox.layout.align.vertical,
+		},
 	})
 
 	-- Create the wibox
