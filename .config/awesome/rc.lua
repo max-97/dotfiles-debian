@@ -294,6 +294,10 @@ ruled.client.connect_signal("request::rules", function()
 end)
 -- }}}
 
+client.connect_signal("request::manage", function(c)
+	c.shape = gears.shape.rounded_rect
+end)
+
 -- {{{ Titlebars
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
