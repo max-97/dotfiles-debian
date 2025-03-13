@@ -27,6 +27,7 @@ client.connect_signal("request::titlebars", function(c)
 		end),
 	}
 
+	-- drag & resize area for titlebar
 	local buttons_loader = {
 		layout = wibox.layout.fixed.vertical,
 		buttons = titlebars_buttons,
