@@ -2,6 +2,7 @@
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
+require("awful.autofocus")
 
 -- Standard awesome library
 local gears = require("gears")
@@ -10,26 +11,12 @@ local awful = require("awful")
 local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
--- Notification library
-local naughty = require("naughty")
 -- Declarative object management
 local ruled = require("ruled")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
-
--- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
-naughty.connect_signal("request::display_error", function(message, startup)
-	naughty.notification({
-		urgency = "critical",
-		title = "Oops, an error happened" .. (startup and " during startup!" or "!"),
-		message = message,
-	})
-end)
--- }}}
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
@@ -38,7 +25,7 @@ local theme_path = string.format("%s/themes/%s/theme.lua", gears.filesystem.get_
 beautiful.init(theme_path)
 
 require("apps")
-
+require("ui")
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
@@ -85,26 +72,6 @@ tag.connect_signal("request::default_layouts", function()
 		awful.layout.suit.max.fullscreen,
 		awful.layout.suit.magnifier,
 		awful.layout.suit.corner.nw,
-	})
-end)
--- }}}
-
--- {{{ Wallpaper
-screen.connect_signal("request::wallpaper", function(s)
-	awful.wallpaper({
-		screen = s,
-		widget = {
-			{
-				image = beautiful.wallpaper,
-				upscale = true,
-				downscale = true,
-				widget = wibox.widget.imagebox,
-			},
-			valign = "center",
-			halign = "center",
-			tiled = false,
-			widget = wibox.container.tile,
-		},
 	})
 end)
 -- }}}
@@ -359,10 +326,6 @@ ruled.notification.connect_signal("request::rules", function()
 			implicit_timeout = 5,
 		},
 	})
-end)
-
-naughty.connect_signal("request::display", function(n)
-	naughty.layout.box({ notification = n })
 end)
 
 -- }}}
