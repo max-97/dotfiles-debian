@@ -18,14 +18,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-local chosen_theme = "default"
-local theme_path = string.format("%s/themes/%s/theme.lua", gears.filesystem.get_configuration_dir(), chosen_theme)
-beautiful.init(theme_path)
-
 require("signal.global")
 require("apps")
+require("configuration")
 require("ui")
 -- {{{ Menu
 -- Create a launcher widget and a main menu
