@@ -24,6 +24,7 @@ local chosen_theme = "default"
 local theme_path = string.format("%s/themes/%s/theme.lua", gears.filesystem.get_configuration_dir(), chosen_theme)
 beautiful.init(theme_path)
 
+require("signal.global")
 require("apps")
 require("ui")
 -- {{{ Menu

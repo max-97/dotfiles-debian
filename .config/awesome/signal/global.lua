@@ -1,0 +1,1 @@
+VolumeSignal = require("signal.volume")
