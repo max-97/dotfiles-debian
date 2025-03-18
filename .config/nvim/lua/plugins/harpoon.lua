@@ -1,22 +1,38 @@
 return {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    depependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-        local harpoon = require("harpoon")
-        harpoon:setup()
+	"ThePrimeagen/harpoon",
+	branch = "harpoon2",
+	depependencies = { "nvim-lua/plenary.nvim" },
+	config = function()
+		local harpoon = require("harpoon")
+		harpoon:setup()
 
-        local map = vim.keymap.set
-        map("n", "<leader>a", function() harpoon:list():add() end, { desc="add to harpoon"} )
-        map("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc="toggle harpoon ui"})
+		local map = vim.keymap.set
+		map("n", "<leader>a", function()
+			harpoon:list():add()
+		end, { desc = "add to harpoon" })
+		map("n", "<A-e>", function()
+			harpoon.ui:toggle_quick_menu(harpoon:list())
+		end, { desc = "toggle harpoon ui" })
 
-        map("n", "<C-h>", function() harpoon:list():select(1) end, { desc="Go to 1st harpoon file"})
-        map("n", "<C-j>", function() harpoon:list():select(2) end, { desc="Go to 2nd harpoon file"})
-        map("n", "<C-k>", function() harpoon:list():select(3) end, { desc="Go to 3rd harpoon file"})
-        map("n", "<C-l>", function() harpoon:list():select(4) end, { desc="Go to 4th harpoon file"})
+		map("n", "<A-j>", function()
+			harpoon:list():select(1)
+		end, { desc = "Go to 1st harpoon file" })
+		map("n", "<A-k>", function()
+			harpoon:list():select(2)
+		end, { desc = "Go to 2nd harpoon file" })
+		map("n", "<A-l>", function()
+			harpoon:list():select(3)
+		end, { desc = "Go to 3rd harpoon file" })
+		map("n", "<A-;>", function()
+			harpoon:list():select(4)
+		end, { desc = "Go to 4th harpoon file" })
 
-        map("n", "hp", function() harpoon:list():prev() end, { desc="Go to previous harpoon file"})
-        map("n", "hn", function() harpoon:list():next() end, { desc="Go to next harpoon file"})
-    end,
-    lazy = false,
+		map("n", "hp", function()
+			harpoon:list():prev()
+		end, { desc = "Go to previous harpoon file" })
+		map("n", "hn", function()
+			harpoon:list():next()
+		end, { desc = "Go to next harpoon file" })
+	end,
+	lazy = false,
 }
