@@ -9,10 +9,10 @@ map("i", "<C-l>", "<Right>", { desc = "move right" })
 map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
 
-map("n", "<A-h>", "<C-w>h", { desc = "switch window left" })
-map("n", "<A-l>", "<C-w>l", { desc = "switch window right" })
-map("n", "<A-j>", "<C-w>j", { desc = "switch window down" })
-map("n", "<A-k>", "<C-w>k", { desc = "switch window up" })
+map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
+map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
+map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 
@@ -63,11 +63,11 @@ map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
 -- toggleable
-map({ "n", "t" }, "<leader>vt", function()
+map("n", "<leader>vt", function()
 	require("nvchad.term").toggle({ pos = "vsp", id = "vtoggleTerm" })
 end, { desc = "terminal toggleable vertical term" })
 
-map({ "n", "t" }, "<leader>ht", function()
+map("n", "<leader>ht", function()
 	require("nvchad.term").toggle({ pos = "sp", id = "htoggleTerm" })
 end, { desc = "terminal toggleable horizontal term" })
 
@@ -100,4 +100,4 @@ end, { desc = "blankline jump to current context" })
 
 -- custom mappings
 
-map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save" })
+map({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save" })
