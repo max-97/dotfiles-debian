@@ -19,7 +19,7 @@ menu.awesome = {
 
 menu.mainmenu = awful.menu({
 	items = {
-		{ "Termianl", terminal },
+		{ "Terminal", terminal },
 		{ "Explorer", explorer },
 		{ "Browser", browser },
 		{ "Editor", editor_cmd },
