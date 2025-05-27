@@ -5,5 +5,4 @@ require("configuration.keybindings")
 require("configuration.rules")
 require("configuration.autofocus")
 require("configuration.monitor")
--- TODO fix music-notification
--- require("configuration.music-notification")
+require("configuration.music-notification")
