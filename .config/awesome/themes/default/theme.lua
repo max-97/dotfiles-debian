@@ -22,7 +22,10 @@ local titlebar_assets_path = assets_path .. "titlebar/"
 
 local theme = {}
 
-theme.font = "JetBrainsMono Nerd Font 10"
+theme.nerd_font = "JetBrainsMono Nerd Font"
+theme.font_name = theme.nerd_font
+theme.font_size = "10"
+theme.font = theme.nerd_font .. " " .. theme.font_size
 theme.material_icons = "Material Icons"
 
 -- base colors

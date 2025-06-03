@@ -3,7 +3,16 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local awful = require("awful")
 
-screen.conect_signal("request::desktop_decoration", function(s)
+-- local launchers = require 'ui.bar.modules.launchers'
+-- local gettaglist = require 'ui.bar.modules.tags'
+-- local systray_toggler = require 'ui.bar.modules.systray_toggler'
+-- local dashboard_toggler = require 'ui.bar.modules.dashboard_toggler'
+-- local actions = require 'ui.bar.modules.actions'
+-- local clock = require 'ui.bar.modules.date'
+-- local getlayoutbox = require 'ui.bar.modules.layoutbox'
+local powerbutton = require("ui.bar.modules.powerbutton")
+
+screen.connect_signal("request::desktop_decoration", function(s)
 	awful.tag({ "1", "2", "3", "4", "5", "6" }, s, awful.layout.layouts[6])
 
 	local bar_content = wibox.widget({
@@ -31,7 +40,7 @@ screen.conect_signal("request::desktop_decoration", function(s)
 						{
 							-- clock
 							-- getlayoutbox(s),
-							-- powerbutton,
+							powerbutton,
 							spacing = 2,
 							layout = wibox.layout.fixed.vertical,
 						},
