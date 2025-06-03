@@ -9,7 +9,7 @@ local awful = require("awful")
 -- local dashboard_toggler = require 'ui.bar.modules.dashboard_toggler'
 -- local actions = require 'ui.bar.modules.actions'
 -- local clock = require 'ui.bar.modules.date'
--- local getlayoutbox = require 'ui.bar.modules.layoutbox'
+local getlayoutbox = require("ui.bar.modules.layoutbox")
 local powerbutton = require("ui.bar.modules.powerbutton")
 
 screen.connect_signal("request::desktop_decoration", function(s)
@@ -39,7 +39,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 						},
 						{
 							-- clock
-							-- getlayoutbox(s),
+							getlayoutbox(s),
 							powerbutton,
 							spacing = 2,
 							layout = wibox.layout.fixed.vertical,
