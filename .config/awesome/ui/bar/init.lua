@@ -5,8 +5,8 @@ local awful = require("awful")
 
 -- local launchers = require 'ui.bar.modules.launchers'
 -- local gettaglist = require 'ui.bar.modules.tags'
--- local systray_toggler = require 'ui.bar.modules.systray_toggler'
--- local dashboard_toggler = require 'ui.bar.modules.dashboard_toggler'
+local systray_toggler = require("ui.bar.modules.systray_toggler")
+local dashboard_toggler = require("ui.bar.modules.dashboard_toggler")
 -- local actions = require 'ui.bar.modules.actions'
 local clock = require("ui.bar.modules.date")
 local getlayoutbox = require("ui.bar.modules.layoutbox")
@@ -27,8 +27,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
 				{
 					{
 						{
-							-- systray_toggler,
-							-- dashboard_togler
+							systray_toggler,
+							dashboard_toggler,
 							spacing = 9,
 							layout = wibox.layout.fixed.vertical,
 						},
