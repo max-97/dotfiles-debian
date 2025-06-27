@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 -- just works for pulseaudio
 
 local gears = require("gears")

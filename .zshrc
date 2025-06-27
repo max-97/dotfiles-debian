@@ -24,6 +24,7 @@ zinit cdreplay -q
 
 export PATH="$PATH:/opt/nvim/"
 export PATH="$PATH:/home/max/.local/bin"
+export PATH="$PATH:/sbin"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.toml)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
