@@ -4,10 +4,10 @@ local beautiful = require("beautiful")
 local awful = require("awful")
 
 -- local launchers = require 'ui.bar.modules.launchers'
--- local gettaglist = require 'ui.bar.modules.tags'
+local gettaglist = require("ui.bar.modules.tags")
 local systray_toggler = require("ui.bar.modules.systray_toggler")
 local dashboard_toggler = require("ui.bar.modules.dashboard_toggler")
--- local actions = require 'ui.bar.modules.actions'
+local actions = require("ui.bar.modules.actions")
 local clock = require("ui.bar.modules.date")
 local getlayoutbox = require("ui.bar.modules.layoutbox")
 local powerbutton = require("ui.bar.modules.powerbutton")
@@ -33,7 +33,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 							layout = wibox.layout.fixed.vertical,
 						},
 						{
-							-- actions,
+							actions,
 							bottom = 6,
 							widget = wibox.container.margin,
 						},
@@ -53,7 +53,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 				layout = wibox.layout.align.vertical,
 			},
 			{
-				-- gettaglist(s),
+				gettaglist(s),
 				halign = "center",
 				valign = "center",
 				layout = wibox.container.place,
