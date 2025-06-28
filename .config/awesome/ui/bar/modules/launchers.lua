@@ -23,14 +23,6 @@ local function make_launcher(opts)
 	return launcher
 end
 
-local function donotif(prog)
-	naughty.notify({
-		app_name = "Launchers",
-		title = "Launching!",
-		text = "Launching " .. prog .. ", please wait...",
-	})
-end
-
 local rofi = make_launcher({
 	markup = "異",
 	onclick = function()
@@ -45,10 +37,9 @@ local screenshot = make_launcher({
 	end,
 })
 
-local firefox = make_launcher({
-	markup = "",
+local brave = make_launcher({
+	markup = "\u{F059F}",
 	onclick = function()
-		donotif("browser")
 		awful.spawn(browser) -- comes from `user_likes.lua`
 	end,
 })
@@ -56,24 +47,22 @@ local firefox = make_launcher({
 local terminal = make_launcher({
 	markup = "",
 	onclick = function()
-		donotif("terminal")
 		awful.spawn(terminal) -- comes from `user_likes.lua`
 	end,
 })
 
 local explorer = make_launcher({
-	markup = "",
+	markup = "\u{F024B}",
 	onclick = function()
-		donotif("explorer")
 		awful.spawn(explorer) -- comes from `user_likes.lua`'
 	end,
 })
 
 -- add here the list of all the wanted launchers.
 launchers.dict = {
-	rofi,
+	-- rofi,
 	screenshot,
-	firefox,
+	brave,
 	terminal,
 	explorer,
 }
