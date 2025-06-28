@@ -25,7 +25,7 @@ end)
 local function make_powerbutton(opts)
 	local default_widget = function(font, align)
 		return wibox.widget({
-			markup = "⏻",
+			markup = " \u{f0425} ", -- power symbol
 			font = font,
 			align = align,
 			widget = wibox.widget.textbox,
@@ -59,8 +59,8 @@ local function make_powerbutton(opts)
 			call_widget(),
 			top = dpi(2),
 			bottom = dpi(2),
-			left = dpi(18),
-			right = dpi(18),
+			left = dpi(9),
+			right = dpi(9),
 			widget = wibox.container.margin,
 		},
 		widget = wibox.container.background,
@@ -87,7 +87,7 @@ local powerbuttons = wibox.widget({
 		widget = function(icon_font, align)
 			return wibox.widget({
 				{
-					markup = "⏻",
+					markup = " \u{f0425} ", -- shutdown
 					align = align,
 					font = icon_font,
 					widget = wibox.widget.textbox,
@@ -104,7 +104,7 @@ local powerbuttons = wibox.widget({
 		widget = function(font, align)
 			return wibox.widget({
 				{
-					markup = "勒",
+					markup = " ↺ ",
 					align = align,
 					font = font,
 					widget = wibox.widget.textbox,
@@ -121,7 +121,7 @@ local powerbuttons = wibox.widget({
 		widget = function(font, align)
 			return wibox.widget({
 				{
-					markup = "",
+					markup = " \u{f0343} ", -- logout
 					align = align,
 					font = font,
 					widget = wibox.widget.textbox,
@@ -138,7 +138,7 @@ local powerbuttons = wibox.widget({
 		widget = function(font, align)
 			return wibox.widget({
 				{
-					markup = "",
+					markup = "  ",
 					align = align,
 					font = font,
 					widget = wibox.widget.textbox,

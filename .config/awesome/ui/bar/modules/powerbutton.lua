@@ -4,7 +4,7 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 
 local powerbutton = wibox.widget({
-	markup = "⏻ ",
+	markup = " \u{f0425} ",
 	valign = "center",
 	font = beautiful.nerd_font .. " 18",
 	widget = wibox.widget.textbox,
