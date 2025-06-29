@@ -8,7 +8,7 @@ local helpers = require("helpers")
 
 local network = {}
 
-local get_ssid = "iwgetid -r"
+local get_ssid = "/sbin/iwgetid -r"
 
 function network.re_emit_connected_signal()
 	awful.spawn.easy_async_with_shell(get_ssid, function(out)

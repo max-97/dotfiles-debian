@@ -161,8 +161,8 @@ theme.poweroff_icon = icons_path .. "poweroff.svg"
 theme.volume_on = gears.color.recolor_image(icons_path .. "volume-on.svg", theme.fg_normal)
 theme.volume_muted = gears.color.recolor_image(icons_path .. "volume-muted.svg", theme.fg_normal)
 
-theme.network_connected = ""
-theme.network_disconnected = "🗙"
+theme.network_connected = "\u{F05A9}"
+theme.network_disconnected = "\u{F05AA}"
 
 -- Variables set for theming notifications:
 theme.notification_font = "JetBrainsMono Nerd Font 12"
