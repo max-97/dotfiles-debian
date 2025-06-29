@@ -33,7 +33,7 @@ local function mkactionicon(icon, font)
 		},
 		id = "background_role",
 		fg = beautiful.fg_normal,
-		bg = beautiful.dimblack,
+		bg = beautiful.crust,
 		shape = gears.shape.circle,
 		forced_height = 48,
 		forced_width = 48,
@@ -42,7 +42,7 @@ local function mkactionicon(icon, font)
 			local background = self:get_children_by_id("background_role")[1]
 
 			local blue = color.color({ hex = beautiful.blue })
-			local dimblack = color.color({ hex = beautiful.dimblack })
+			local dimblack = color.color({ hex = beautiful.crust })
 
 			-- method -> rgb
 			local by_percent = color.transition(dimblack, blue, 0)
