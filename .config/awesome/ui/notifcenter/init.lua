@@ -36,25 +36,27 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	self.status = "undefined"
+	self.off_screen_position = s.geometry.x + s.geometry.width + width + beautiful.useless_gap * 2
+	self.on_screen_position = s.geometry.x + s.geometry.width - width - beautiful.useless_gap * 2
 
 	self.animate:subscribe(function(pos)
 		self.x = pos
-		if self.x == s.geometry.width + width + beautiful.useless_gap * 2 and self.status == "closing" then
+		if self.x == self.off_screen_position and self.status == "closing" then
 			self.visible = false
 		end
 	end)
 
-	self.animate.target = s.geometry.width + width + beautiful.useless_gap * 2
+	self.animate.target = self.off_screen_position
 
 	function s.notifcenter.open()
 		self.status = "opening"
 		self.visible = true
-		self.animate.target = s.geometry.width - width - beautiful.useless_gap * 2
+		self.animate.target = self.on_screen_position
 	end
 
 	function s.notifcenter.hide()
 		self.status = "closing"
-		self.animate.target = s.geometry.width + width + beautiful.useless_gap * 2
+		self.animate.target = self.off_screen_position
 	end
 
 	function s.notifcenter.toggle()
