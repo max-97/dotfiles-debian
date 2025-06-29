@@ -17,6 +17,10 @@ network:add_button(awful.button({}, 1, function()
 	awful.spawn("bash " .. gfs.get_configuration_dir() .. "scripts/toggle-network.sh")
 end))
 
+network:add_button(awful.button({}, 3, function()
+	awful.spawn("nm-connection-editor")
+end))
+
 awesome.connect_signal("network::connected", function(is_connected)
 	network.markup = is_connected and beautiful.network_connected or beautiful.network_disconnected
 end)
