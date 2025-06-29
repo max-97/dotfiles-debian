@@ -80,7 +80,7 @@ return util.make_card({
 		{
 			{
 				util.make_button({
-					markup = helpers.get_colorized_markup("拉", beautiful.blue),
+					markup = helpers.get_colorized_markup("\u{F0426}", beautiful.blue),
 					font = beautiful.nerd_font .. " 16",
 					align = "center",
 					valign = "center",
@@ -91,22 +91,22 @@ return util.make_card({
 				nil,
 				{
 					util.make_button({
-						markup = helpers.get_colorized_markup("勒", beautiful.magenta),
+						markup = helpers.get_colorized_markup("↺", beautiful.magenta),
 						font = beautiful.nerd_font .. " 16",
 						align = "center",
 						valign = "center",
 						widget = wibox.widget.textbox,
 					}, function()
-						awful.spawn("doas reboot")
+						awful.spawn("systemctl reboot")
 					end),
 					util.make_button({
-						markup = helpers.get_colorized_markup("⏻", beautiful.red),
+						markup = helpers.get_colorized_markup("\u{f0425}", beautiful.red),
 						font = beautiful.nerd_font .. " 16",
 						align = "center",
 						valign = "center",
 						widget = wibox.widget.textbox,
 					}, function()
-						awful.spawn("doas poweroff")
+						awful.spawn("systemctl poweroff")
 					end),
 					spacing = beautiful.useless_gap * 2,
 					layout = wibox.layout.fixed.horizontal,

@@ -68,7 +68,7 @@ end)
 -- buttons
 local previous = action_button({
 	id = "markup_role",
-	markup = "玲",
+	markup = "\u{F04AE}",
 	align = "center",
 	valign = "center",
 	font = beautiful.nerd_font .. " 13",
@@ -98,7 +98,7 @@ end))
 
 local next = action_button({
 	id = "markup_role",
-	markup = "怜",
+	markup = "\u{F04AD}",
 	align = "center",
 	valign = "center",
 	font = beautiful.nerd_font .. " 13",

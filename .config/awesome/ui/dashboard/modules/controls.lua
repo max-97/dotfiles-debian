@@ -52,7 +52,7 @@ local function mkslider(icon)
 	})
 end
 
-local volume = mkslider("")
+local volume = mkslider(" ")
 
 volume.slider:connect_signal("property::value", function(_, value)
 	VolumeSignal.set(value, false)
@@ -63,10 +63,10 @@ awesome.connect_signal("volume::value", function(volval)
 end)
 
 awesome.connect_signal("volume::muted", function(muted)
-	volume.icon = muted and "婢" or ""
+	volume.icon = muted and "🔇" or " "
 end)
 
-local brightness = mkslider("")
+local brightness = mkslider("\u{F1396}")
 
 brightness.slider:connect_signal("property::value", function(_, value)
 	brightness_signal.set(value)

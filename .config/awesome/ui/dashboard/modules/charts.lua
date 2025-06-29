@@ -35,7 +35,7 @@ local function mkchart(header, icon)
 								{
 									{
 										markup = icon,
-										font = beautiful.nerd_font .. " 34",
+										font = beautiful.nerd_font .. " 28",
 										widget = wibox.widget.textbox,
 									},
 									direction = "west",
@@ -52,7 +52,7 @@ local function mkchart(header, icon)
 							forced_height = 124,
 							forced_width = 124,
 							widget = wibox.container.radialprogressbar,
-							border_color = beautiful.dimblack,
+							border_color = beautiful.black,
 							color = beautiful.blue,
 							border_width = dpi(10),
 						},
@@ -78,10 +78,10 @@ local function mkchart(header, icon)
 end
 
 -- initialize charts
-local cpu = mkchart("CPU", "")
-local mem = mkchart("RAM", "")
-local disk = mkchart("Disk", "")
-local temp = mkchart("Temp", "")
+local cpu = mkchart("CPU", " \u{F0EE0} ")
+local mem = mkchart("RAM", " \u{F061A} ")
+local temp = mkchart("Temp", "\u{F03C8} ")
+local disk = mkchart("Disk", " \u{F02CA} ")
 
 -- give charts values
 awesome.connect_signal("cpu::percent", function(percent)

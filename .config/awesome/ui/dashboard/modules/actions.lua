@@ -75,7 +75,7 @@ local function mkactionicon(icon, font)
 end
 
 -- actions buttons
-local wifi = mkactionicon("")
+local wifi = mkactionicon(beautiful.network_connected)
 
 wifi:add_button(awful.button({}, 1, function()
 	awful.spawn("bash " .. gfs.get_configuration_dir() .. "scripts/toggle-network.sh")
@@ -83,10 +83,10 @@ end))
 
 awesome.connect_signal("network::connected", function(is_connected)
 	wifi.active = is_connected
-	wifi.icon = is_connected and "" or "睊"
+	wifi.icon = is_connected and beautiful.network_connected or beautiful.network_disconnected
 end)
 
-local volume = mkactionicon("")
+local volume = mkactionicon(" ")
 
 volume:add_button(awful.button({}, 1, function()
 	VolumeSignal.toggle_muted()
@@ -94,10 +94,10 @@ end))
 
 awesome.connect_signal("volume::muted", function(is_muted)
 	volume.active = not is_muted
-	volume.icon = is_muted and "婢" or ""
+	volume.icon = is_muted and "🔇" or " "
 end)
 
-local airplane = mkactionicon("")
+local airplane = mkactionicon(" \u{F001D} ")
 
 airplane:add_button(awful.button({}, 1, function()
 	airplane_signal.toggle()
@@ -105,10 +105,10 @@ end))
 
 awesome.connect_signal("airplane::enabled", function(enabled)
 	airplane.active = enabled
-	airplane.icon = enabled and "" or ""
+	airplane.icon = enabled and "\u{F001D}" or "\u{F001E}"
 end)
 
-local redshift = mkactionicon("盛")
+local redshift = mkactionicon("\u{F0599}")
 
 redshift:add_button(awful.button({}, 1, function()
 	redshift_signal.toggle()
@@ -116,10 +116,10 @@ end))
 
 awesome.connect_signal("redshift::active", function(enabled)
 	redshift.active = enabled
-	redshift.icon = enabled and "" or "盛"
+	redshift.icon = enabled and "" or "\u{F0599}"
 end)
 
-local bluetooth = mkactionicon("", beautiful.nerd_font .. " 19")
+local bluetooth = mkactionicon("\u{F00AF}", beautiful.nerd_font .. " 19")
 
 bluetooth:add_button(awful.button({}, 1, function()
 	bluetooth_signal.toggle()
@@ -127,7 +127,7 @@ end))
 
 awesome.connect_signal("bluetooth::enabled", function(enabled)
 	bluetooth.active = enabled
-	bluetooth.icon = enabled and "" or ""
+	bluetooth.icon = enabled and "\u{F00AF}" or "\u{F00B2}"
 	if enabled then
 		bluetooth.font = beautiful.nerd_font .. " 16"
 	else
@@ -143,7 +143,7 @@ end))
 
 awesome.connect_signal("mic::active", function(enabled)
 	mic.active = enabled
-	mic.icon = enabled and "" or ""
+	mic.icon = enabled and "  " or " "
 	if enabled then
 		mic.font = beautiful.nerd_font .. " 16"
 	else
@@ -151,13 +151,13 @@ awesome.connect_signal("mic::active", function(enabled)
 	end
 end)
 
-local fully_screenshot = mkactionicon("")
+local fully_screenshot = mkactionicon("\u{F0293}")
 
 fully_screenshot:add_button(awful.button({}, 1, function()
 	screenshot.full({ notify = true })
 end))
 
-local area_screenshot = mkactionicon("")
+local area_screenshot = mkactionicon("\u{F0A6D}")
 
 area_screenshot:add_button(awful.button({}, 1, function()
 	screenshot.area({ notify = true })
