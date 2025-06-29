@@ -71,7 +71,7 @@ end
 local selected_index = 1
 
 -- buttons defining.
-local full_screenshot = base_button("", function(_)
+local full_screenshot = base_button("\u{F0293}", function(_)
 	selected_index = 1
 	---@diagnostic disable-next-line: undefined-global
 	awesome.emit_signal("screenshot-center::area-selector::buttons::update-state")
@@ -95,7 +95,7 @@ awesome.connect_signal("screenshot-center::popup::closing", function()
 end)
 
 -- area-screenshot button.
-local area_screenshot = base_button("", function(_)
+local area_screenshot = base_button("\u{F0A6D}", function(_)
 	selected_index = 2
 	---@diagnostic disable-next-line: undefined-global
 	awesome.emit_signal("screenshot-center::area-selector::buttons::update-state")
@@ -213,7 +213,7 @@ local submit_button = wibox.widget({
 		{
 			{
 				id = "icon_role",
-				markup = selected_index == 1 and "" or "",
+				markup = selected_index == 1 and " \u{F0293} " or " \u{F0A6D} ",
 				-- aument the font_size using `beautiful.font_size`
 				font = beautiful.nerd_font .. " " .. tostring(tonumber(beautiful.font_size) + 4),
 				widget = wibox.widget.textbox,
@@ -247,7 +247,7 @@ local submit_button = wibox.widget({
 -- update the icon when the selected screenshot area is changed.
 ---@diagnostic disable-next-line: undefined-global
 awesome.connect_signal("screenshot-center::area-selector::buttons::update-state", function()
-	submit_button.icon = selected_index == 1 and "" or ""
+	submit_button.icon = selected_index == 1 and "\u{F0293}" or "\u{F0A6D}"
 end)
 
 -- disabling the submit button when the delay-input is in an edition process
