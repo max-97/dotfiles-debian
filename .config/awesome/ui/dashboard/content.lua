@@ -8,7 +8,6 @@ local awful = require("awful")
 local user_welcome = require("ui.dashboard.modules.user_welcome")
 local controls = require("ui.dashboard.modules.controls")
 local actions = require("ui.dashboard.modules.actions")
-local charts = require("ui.dashboard.modules.charts")
 
 local dpi = beautiful.xresources.apply_dpi
 
@@ -107,7 +106,6 @@ local mainbox = wibox.widget({
 				spacing = beautiful.useless_gap * 2,
 				layout = wibox.layout.flex.horizontal,
 			},
-			charts,
 			nil,
 			layout = wibox.layout.align.vertical,
 		},
