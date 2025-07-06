@@ -28,12 +28,16 @@ echo "***"
 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
+# spotify
+curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
 echo "***"
 echo "Install additional apps"
 echo "***"
 # install aditional apps
 sudo apt update
-sudo apt install -y brave-browser
+sudo apt install -y brave-browser spotify-client
 
 # Neovim latest, as of 05.08.24 it is v0.10.1
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
