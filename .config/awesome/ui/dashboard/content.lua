@@ -6,7 +6,6 @@ local gears = require("gears")
 local awful = require("awful")
 
 local user_welcome = require("ui.dashboard.modules.user_welcome")
-local music = require("ui.dashboard.modules.music")
 local controls = require("ui.dashboard.modules.controls")
 local actions = require("ui.dashboard.modules.actions")
 local charts = require("ui.dashboard.modules.charts")
@@ -101,7 +100,6 @@ local mainbox = wibox.widget({
 					layout = wibox.layout.fixed.vertical,
 				},
 				{
-					music,
 					actions,
 					spacing = beautiful.useless_gap * 2,
 					layout = wibox.layout.fixed.vertical,
