@@ -30,6 +30,13 @@ local rofi = make_launcher({
 	end,
 })
 
+local music = make_launcher({
+	markup = "\u{F075A}",
+	onclick = function()
+		awful.spawn(music)
+	end,
+})
+
 local screenshot = make_launcher({
 	markup = "",
 	onclick = function()
@@ -61,7 +68,8 @@ local explorer = make_launcher({
 -- add here the list of all the wanted launchers.
 launchers.dict = {
 	-- rofi,
-	screenshot,
+	-- screenshot,
+	music,
 	brave,
 	terminal,
 	explorer,
