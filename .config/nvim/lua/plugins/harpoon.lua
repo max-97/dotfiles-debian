@@ -27,10 +27,10 @@ return {
 			harpoon:list():select(4)
 		end, { desc = "Go to 4th harpoon file" })
 
-		map("n", "hp", function()
+		map("n", "<A-p>", function()
 			harpoon:list():prev()
 		end, { desc = "Go to previous harpoon file" })
-		map("n", "hn", function()
+		map("n", "<A-n>", function()
 			harpoon:list():next()
 		end, { desc = "Go to next harpoon file" })
 	end,
