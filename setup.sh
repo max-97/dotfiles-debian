@@ -39,9 +39,9 @@ echo "***"
 sudo apt update
 sudo apt install -y brave-browser spotify-client
 
-# Neovim latest, as of 05.08.24 it is v0.10.1
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
+# Neovim latest, as of 07.07.25 it is v0.11.2
+curl -LO https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.appimage
+chmod u+x nvim-linux-x86_64.appimage
 mkdir -p /opt/nvim
 sudo mv ./nvim.appimage /opt/nvim/nvim
 
