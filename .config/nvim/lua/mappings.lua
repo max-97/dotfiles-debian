@@ -101,3 +101,5 @@ end, { desc = "blankline jump to current context" })
 -- custom mappings
 
 map({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save" })
+-- remape escape to escape and save
+map({ "i" }, "<Esc>", "<Esc><cmd>w<cr>", { desc = "Save" })
