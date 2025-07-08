@@ -9,11 +9,6 @@ map("i", "<A-f>", "<Right>", { desc = "move right" })
 map("i", "<A-s>", "<Down>", { desc = "move down" })
 map("i", "<A-d>", "<Up>", { desc = "move up" })
 
-map("n", "<A-a>", "<C-w>h", { desc = "switch window left" })
-map("n", "<A-f>", "<C-w>l", { desc = "switch window right" })
-map("n", "<A-s>", "<C-w>j", { desc = "switch window down" })
-map("n", "<A-d>", "<C-w>k", { desc = "switch window up" })
-
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "General Save file" })
