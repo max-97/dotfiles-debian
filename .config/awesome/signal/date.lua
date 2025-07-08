@@ -17,4 +17,3 @@ gears.timer({
 		end)
 	end,
 })
-

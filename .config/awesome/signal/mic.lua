@@ -21,18 +21,18 @@ function mic.toggle()
 	mic._invoke_script("toggle")
 end
 
-gears.timer({
-	timeout = 2,
-	call_now = true,
-	autostart = true,
-	callback = function()
-		mic._invoke_script("status", function(state)
-			awesome.emit_signal("mic::active", state == "yes")
-		end)
-		mic._invoke_script("get", function(value)
-			awesome.emit_signal("mic::volume", value)
-		end)
-	end,
-})
+-- gears.timer({
+-- 	timeout = 2,
+-- 	call_now = true,
+-- 	autostart = true,
+-- 	callback = function()
+-- 		mic._invoke_script("status", function(state)
+-- 			awesome.emit_signal("mic::active", state == "yes")
+-- 		end)
+-- 		mic._invoke_script("get", function(value)
+-- 			awesome.emit_signal("mic::volume", value)
+-- 		end)
+-- 	end,
+-- })
 
 return mic

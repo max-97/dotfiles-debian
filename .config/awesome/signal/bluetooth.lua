@@ -20,15 +20,15 @@ function bluetooth.toggle()
 	bluetooth._invoke_script("toggle")
 end
 
-gears.timer({
-	timeout = 5,
-	call_now = true,
-	autostart = true,
-	callback = function()
-		bluetooth._invoke_script("state", function(state)
-			awesome.emit_signal("bluetooth::enabled", state == "on")
-		end)
-	end,
-})
+-- gears.timer({
+-- 	timeout = 5,
+-- 	call_now = true,
+-- 	autostart = true,
+-- 	callback = function()
+-- 		bluetooth._invoke_script("state", function(state)
+-- 			awesome.emit_signal("bluetooth::enabled", state == "on")
+-- 		end)
+-- 	end,
+-- })
 
 return bluetooth

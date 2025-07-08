@@ -21,15 +21,15 @@ function airplane.toggle()
 	airplane._invoke_script("toggle")
 end
 
-gears.timer({
-	timeout = 2,
-	call_now = true,
-	autostart = true,
-	callback = function()
-		airplane._invoke_script("status", function(status)
-			awesome.emit_signal("airplane::enabled", status == "on")
-		end)
-	end,
-})
+-- gears.timer({
+-- 	timeout = 2,
+-- 	call_now = true,
+-- 	autostart = true,
+-- 	callback = function()
+-- 		airplane._invoke_script("status", function(status)
+-- 			awesome.emit_signal("airplane::enabled", status == "on")
+-- 		end)
+-- 	end,
+-- })
 
 return airplane

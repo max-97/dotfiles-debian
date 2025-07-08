@@ -37,18 +37,18 @@ function volume.toggle_muted()
 	end)
 end
 
-gears.timer({
-	timeout = 3,
-	call_now = true,
-	autostart = true,
-	callback = volume.re_emit_volume_value_signal,
-})
-
-gears.timer({
-	timeout = 3,
-	call_now = true,
-	autostart = true,
-	callback = volume.re_emit_muted_signal,
-})
+-- gears.timer({
+-- 	timeout = 3,
+-- 	call_now = true,
+-- 	autostart = true,
+-- 	callback = volume.re_emit_volume_value_signal,
+-- })
+--
+-- gears.timer({
+-- 	timeout = 3,
+-- 	call_now = true,
+-- 	autostart = true,
+-- 	callback = volume.re_emit_muted_signal,
+-- })
 
 return volume
