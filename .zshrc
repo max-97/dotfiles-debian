@@ -24,7 +24,7 @@ zinit cdreplay -q
 
 export PATH="$PATH:/opt/nvim/"
 export PATH="$PATH:/opt/obsidian/"
-export PATH="$PATH:/usr/libexec/doker/cli-plugins/"
+export PATH="$PATH:/usr/libexec/docker/cli-plugins/"
 export PATH="$PATH:/home/max/.local/bin"
 export PATH="$PATH:/sbin"
 
