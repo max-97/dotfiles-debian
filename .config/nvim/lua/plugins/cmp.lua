@@ -1,3 +1,6 @@
+---[[
+--- nvim-cmp is a completion engine for neovim.
+---]]
 return {
 	"hrsh7th/nvim-cmp",
 	opts = function()

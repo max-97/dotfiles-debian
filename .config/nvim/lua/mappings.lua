@@ -11,7 +11,6 @@ map("i", "<A-d>", "<Up>", { desc = "move up" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "General Clear highlights" })
 
-map("n", "<C-s>", "<cmd>w<CR>", { desc = "General Save file" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "General Copy whole file" })
 
 map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "Toggle nvcheatsheet" })
@@ -21,6 +20,7 @@ map("n", "<leader>fm", function()
 end, { desc = "General Format file" })
 
 -- global lsp mappings
+-- loclist is used to display diagnostics (warning, errors and hints)
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP Diagnostic loclist" })
 
 -- tabufline
@@ -94,7 +94,6 @@ map("n", "<leader>cc", function()
 end, { desc = "blankline jump to current context" })
 
 -- custom mappings
-
-map({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save" })
+map({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "General Save File" })
 -- remape escape to escape and save
-map({ "i" }, "<Esc>", "<Esc><cmd>w<cr>", { desc = "Save" })
+map({ "i" }, "<Esc>", "<Esc><cmd>w<cr>", { desc = "Exit to Normal and Save" })

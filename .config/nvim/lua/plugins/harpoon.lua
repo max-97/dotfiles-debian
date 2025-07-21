@@ -1,3 +1,6 @@
+--[[
+-- nvim-harpoon is the best plugin known to humankind
+--]]
 return {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
