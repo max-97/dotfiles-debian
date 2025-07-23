@@ -109,5 +109,5 @@ alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time
 eval $(thefuck --alias)
 
 if command -v tmux >/dev/null && [ -z "$TMUX" ]; then
-    tmux attack-session -t default || tmux new-session -s default
+    tmux attach-session -t default || tmux new-session -s default
 fi
