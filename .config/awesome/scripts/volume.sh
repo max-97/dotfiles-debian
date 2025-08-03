@@ -3,11 +3,11 @@
 SINK=$(pactl list short sinks | sed -e 's,^\\([0-9][0-9]*\\)[^0-9].*,\\1,' | head -n 1 | awk '{print $1}');
 
 get () {
-    pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | awk '{print $5}' | tr '%' ' ' | xargs
+    pactl get-sink-volume @DEFAULT_SINK@ | awk -F'/' '{print $2}' | tr -d ' %'
 }
 
 mute () {
-    pactl set-sink-mute $SINK toggle
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 }
 
 if [[ $1 == "get" ]]; then

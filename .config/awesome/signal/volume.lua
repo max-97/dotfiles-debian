@@ -1,6 +1,6 @@
 ---@diagnostic disable: undefined-global
 
--- just works for pulseaudio
+-- works with pipewire
 
 local gears = require("gears")
 local awful = require("awful")
@@ -10,7 +10,7 @@ local helpers = require("helpers")
 local volume = {}
 
 local script = gfs.get_configuration_dir() .. "scripts/volume.sh"
-local how_to_know_if_muted = "pacmd list-sinks | awk '/muted/ { print $2 }'"
+local how_to_know_if_muted = "pactl get-sink-mute @DEFAULT_SINK@ | awk '{ print $2 }'"
 
 function volume.re_emit_volume_value_signal()
 	awful.spawn.easy_async_with_shell(script .. " get", function(out)
@@ -37,18 +37,18 @@ function volume.toggle_muted()
 	end)
 end
 
--- gears.timer({
--- 	timeout = 3,
--- 	call_now = true,
--- 	autostart = true,
--- 	callback = volume.re_emit_volume_value_signal,
--- })
---
--- gears.timer({
--- 	timeout = 3,
--- 	call_now = true,
--- 	autostart = true,
--- 	callback = volume.re_emit_muted_signal,
--- })
+gears.timer({
+	timeout = 3,
+	call_now = true,
+	autostart = true,
+	callback = volume.re_emit_volume_value_signal,
+})
+
+gears.timer({
+	timeout = 3,
+	call_now = true,
+	autostart = true,
+	callback = volume.re_emit_muted_signal,
+})
 
 return volume
