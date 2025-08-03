@@ -22,7 +22,7 @@ local titlebar_assets_path = assets_path .. "titlebar/"
 
 local theme = {}
 
-theme.nerd_font = "JetBrainsMono Nerd Font"
+theme.nerd_font = "JetBrainsMono Nerd Font Mono"
 theme.font_name = theme.nerd_font
 theme.font_size = "10"
 theme.font = theme.nerd_font .. " " .. theme.font_size
@@ -165,7 +165,7 @@ theme.network_connected = "\u{F05A9}"
 theme.network_disconnected = "\u{F05AA}"
 
 -- Variables set for theming notifications:
-theme.notification_font = "JetBrainsMono Nerd Font 12"
+theme.notification_font = "JetBrainsMono Nerd Font Mono 12"
 theme.notification_margin = dpi(10)
 theme.notification_border_color = theme.border_normal
 theme.notification_border_width = theme.border_width
