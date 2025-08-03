@@ -3,7 +3,7 @@ local menubar = require("menubar")
 terminal = "alacritty"
 -- TODO maybe use other explorer
 explorer = "nautilus"
-browser = "brave-browser"
+browser = "flatpak run com.brave.Browser"
 music = "spotify"
 -- TODO install and setup rofi
 -- launcher = "rofi -show drun"
