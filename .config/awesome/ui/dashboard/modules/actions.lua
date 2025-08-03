@@ -86,7 +86,7 @@ awesome.connect_signal("network::connected", function(is_connected)
 	wifi.icon = is_connected and beautiful.network_connected or beautiful.network_disconnected
 end)
 
-local volume = mkactionicon(" ")
+local volume = mkactionicon("")
 
 volume:add_button(awful.button({}, 1, function()
 	VolumeSignal.toggle_muted()
@@ -94,7 +94,7 @@ end))
 
 awesome.connect_signal("volume::muted", function(is_muted)
 	volume.active = not is_muted
-	volume.icon = is_muted and "🔇" or " "
+	volume.icon = is_muted and "🔇" or ""
 end)
 
 local airplane = mkactionicon(" \u{F001D} ")
@@ -135,7 +135,7 @@ awesome.connect_signal("bluetooth::enabled", function(enabled)
 	end
 end)
 
-local mic = mkactionicon("", beautiful.nerd_font .. " 16")
+local mic = mkactionicon("", beautiful.nerd_font .. " 24")
 
 mic:add_button(awful.button({}, 1, function()
 	mic_signal.toggle()
@@ -143,11 +143,11 @@ end))
 
 awesome.connect_signal("mic::active", function(enabled)
 	mic.active = enabled
-	mic.icon = enabled and "  " or " "
+	mic.icon = enabled and "" or ""
 	if enabled then
-		mic.font = beautiful.nerd_font .. " 16"
+		mic.font = beautiful.nerd_font .. " 24"
 	else
-		mic.font = beautiful.nerd_font .. " 18"
+		mic.font = beautiful.nerd_font .. " 24"
 	end
 end)
 
