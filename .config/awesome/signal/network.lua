@@ -8,7 +8,7 @@ local helpers = require("helpers")
 
 local network = {}
 
-local get_ssid = "/sbin/iwgetid -r"
+local get_ssid = "nmcli -t -f STATE general"
 
 function network.re_emit_connected_signal()
 	awful.spawn.easy_async_with_shell(get_ssid, function(out)
@@ -22,18 +22,18 @@ function network.re_emit_ssid_signal()
 	end)
 end
 
--- gears.timer({
--- 	timeout = 2,
--- 	call_now = true,
--- 	autostart = true,
--- 	callback = network.re_emit_connected_signal,
--- })
---
--- gears.timer({
--- 	timeout = 2,
--- 	call_now = true,
--- 	autostart = true,
--- 	callback = network.re_emit_ssid_signal,
--- })
+gears.timer({
+	timeout = 2,
+	call_now = true,
+	autostart = true,
+	callback = network.re_emit_connected_signal,
+})
+
+gears.timer({
+	timeout = 2,
+	call_now = true,
+	autostart = true,
+	callback = network.re_emit_ssid_signal,
+})
 
 return network
