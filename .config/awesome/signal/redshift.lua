@@ -29,15 +29,15 @@ function redshift.disable()
 	redshift._invoke_script("disable")
 end
 
--- gears.timer({
--- 	timeout = 2,
--- 	call_now = true,
--- 	autostart = true,
--- 	callback = function()
--- 		redshift._invoke_script("state", function(state)
--- 			awesome.emit_signal("redshift::active", state == "on")
--- 		end)
--- 	end,
--- })
+gears.timer({
+	timeout = 2,
+	call_now = true,
+	autostart = true,
+	callback = function()
+		redshift._invoke_script("state", function(state)
+			awesome.emit_signal("redshift::active", state == "on")
+		end)
+	end,
+})
 
 return redshift
