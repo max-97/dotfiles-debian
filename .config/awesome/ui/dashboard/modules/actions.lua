@@ -97,7 +97,7 @@ awesome.connect_signal("volume::muted", function(is_muted)
 	volume.icon = is_muted and "🔇" or ""
 end)
 
-local airplane = mkactionicon(" \u{F001D} ")
+local airplane = mkactionicon("\u{F001D}")
 
 airplane:add_button(awful.button({}, 1, function()
 	airplane_signal.toggle()
