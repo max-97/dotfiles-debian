@@ -29,8 +29,9 @@ local function make_sysinfo(opts)
 		shape = helpers.mkroundedrect(),
 		bg = beautiful.bg_contrast,
 		widget = wibox.container.background,
-		set_value = function(self, value)
-			self:get_children_by_id("variable")[1].markup = value
+		set_markup = function(self, value, color)
+			local markup_text = string.format("<span foreground='%s'>%s</span>", color, value)
+			self:get_children_by_id("variable")[1].markup = markup_text
 		end,
 	})
 
@@ -49,17 +50,29 @@ local temperature = make_sysinfo({
 	icon = "",
 })
 
+local function get_color(value)
+	value = tonumber(value)
+	local color = beautiful.green
+	if value > 75 then
+		color = beautiful.red
+	elseif value > 50 then
+		color = beautiful.yellow
+	end
+	return color
+end
+
 awesome.connect_signal("cpu::percent", function(percent)
-	cpu_usage.value = percent .. "%"
+	cpu_usage:set_markup(percent .. "%", get_color(percent))
 end)
 
 awesome.connect_signal("ram::used", function(percent)
 	local trimmed = percent:match("^%s*(.-)%s*$")
-	ram_usage.value = trimmed .. "%"
+	ram_usage:set_markup(trimmed .. "%", get_color(trimmed))
 end)
 
 awesome.connect_signal("temperature::value", function(temp)
-	temperature.value = math.floor(temp) .. "°C"
+	temp = math.floor(temp)
+	temperature:set_markup(temp .. "°C", get_color(temp))
 end)
 
 local systeminfo = {}
