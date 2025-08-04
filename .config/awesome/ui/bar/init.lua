@@ -3,7 +3,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local awful = require("awful")
 
-local launchers = require("ui.bar.modules.launchers")
+local systeminfo = require("ui.bar.modules.systeminfo")
 local gettaglist = require("ui.bar.modules.tags")
 local systray_toggler = require("ui.bar.modules.systray_toggler")
 local dashboard_toggler = require("ui.bar.modules.dashboard_toggler")
@@ -19,7 +19,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		{
 			{
 				{
-					launchers.get_launchers_widget(),
+					systeminfo.get_info_widget(),
 					top = 7,
 					widget = wibox.container.margin,
 				},

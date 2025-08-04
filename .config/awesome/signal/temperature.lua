@@ -19,15 +19,15 @@ function temperature.async_get(cb)
 	temperature._invoke_script("get", cb)
 end
 
--- gears.timer({
--- 	timeout = 10,
--- 	call_now = true,
--- 	autostart = true,
--- 	callback = function()
--- 		temperature.async_get(function(temp)
--- 			awesome.emit_signal("temperature::value", tonumber(temp))
--- 		end)
--- 	end,
--- })
+gears.timer({
+	timeout = 10,
+	call_now = true,
+	autostart = true,
+	callback = function()
+		temperature.async_get(function(temp)
+			awesome.emit_signal("temperature::value", tonumber(temp))
+		end)
+	end,
+})
 
 return temperature
