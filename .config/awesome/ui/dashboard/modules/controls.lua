@@ -52,7 +52,7 @@ local function mkslider(icon)
 	})
 end
 
-local volume = mkslider("")
+local volume = mkslider("")
 
 volume.slider:connect_signal("property::value", function(_, value)
 	VolumeSignal.set(value, false)

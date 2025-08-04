@@ -5,7 +5,7 @@ local awful = require("awful")
 
 local notification = wibox.widget({
 	widget = wibox.widget.textbox,
-	font = beautiful.nerd_font .. " 17",
+	font = beautiful.nerd_font .. " 15",
 	align = "center",
 	markup = "🛈",
 })
