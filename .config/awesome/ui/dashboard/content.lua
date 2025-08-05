@@ -128,6 +128,7 @@ local widget = {
 	},
 	bg = beautiful.bg_lighter,
 	widget = wibox.container.background,
+	shape = helpers.mkroundedrect(12),
 }
 
 return widget

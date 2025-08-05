@@ -2,6 +2,7 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local wibox = require("wibox")
 local rubato = require("modules.rubato")
+local helpers = require("helpers")
 
 -- call opening listeners
 require("ui.dashboard.listener")
@@ -31,6 +32,7 @@ awful.screen.connect_for_each_screen(function(s)
 		},
 		bg = beautiful.bg_normal,
 		widget = wibox.container.background,
+		shape = helpers.mkroundedrect(12),
 	}
 
 	local content = require("ui.dashboard.content")
