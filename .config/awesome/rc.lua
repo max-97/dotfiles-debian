@@ -14,5 +14,4 @@ require("configuration")
 require("ui")
 
 local awful = require("awful")
-awful.spawn.with_shell("setxkbmap -layout us -variant intl")
 awful.spawn.with_shell("nm-applet")
