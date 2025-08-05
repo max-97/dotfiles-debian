@@ -74,7 +74,7 @@ local headerbox = wibox.widget({
 				spacing = 6,
 				layout = wibox.layout.fixed.horizontal,
 			},
-			searchbox,
+			nil,
 			nil,
 			layout = wibox.layout.align.horizontal,
 		},
