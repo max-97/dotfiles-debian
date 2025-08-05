@@ -2,6 +2,7 @@
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local awful = require("awful")
+local helpers = require("helpers")
 
 local systeminfo = require("ui.bar.modules.systeminfo")
 local gettaglist = require("ui.bar.modules.tags")
@@ -74,6 +75,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		fg = beautiful.fg_normal,
 		widget = bar_content,
 		screen = s,
+		shape = helpers.mkroundedrect(12),
 		placement = function(d)
 			return awful.placement.left(d, {
 				margins = {

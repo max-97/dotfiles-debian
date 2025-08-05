@@ -26,8 +26,6 @@ local function make_sysinfo(opts)
 			spacing = beautiful.useless_gap,
 			layout = wibox.layout.fixed.vertical,
 		},
-		shape = helpers.mkroundedrect(),
-		bg = beautiful.bg_contrast,
 		widget = wibox.container.background,
 		set_markup = function(self, value, color)
 			local markup_text = string.format("<span foreground='%s'>%s</span>", color, value)
@@ -87,6 +85,8 @@ systeminfo.get_info_widget = function()
 	local widget_template = {
 		layout = wibox.layout.fixed.vertical,
 		spacing = 5,
+		shape = helpers.mkroundedrect(),
+		bg = beautiful.bg_contrast,
 	}
 
 	for _, sysinfo in ipairs(systeminfo.dict) do
