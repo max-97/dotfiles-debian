@@ -8,6 +8,7 @@ local awful = require("awful")
 local user_welcome = require("ui.dashboard.modules.user_welcome")
 local controls = require("ui.dashboard.modules.controls")
 local actions = require("ui.dashboard.modules.actions")
+local notifications = require("ui.notifcenter.content")
 
 local dpi = beautiful.xresources.apply_dpi
 
@@ -106,7 +107,7 @@ local mainbox = wibox.widget({
 				spacing = beautiful.useless_gap * 2,
 				layout = wibox.layout.flex.horizontal,
 			},
-			nil,
+			notifications,
 			layout = wibox.layout.align.vertical,
 		},
 		margins = beautiful.useless_gap * 2,

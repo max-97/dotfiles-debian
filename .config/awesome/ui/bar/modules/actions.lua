@@ -6,7 +6,6 @@ local rubato = require("modules.rubato")
 
 local network = require("ui.bar.modules.actions-icons.network")
 local volume = require("ui.bar.modules.actions-icons.volume")
-local notification = require("ui.bar.modules.actions-icons.notification")
 
 local actions = wibox.widget({
 	{
@@ -14,7 +13,6 @@ local actions = wibox.widget({
 			{
 				network,
 				volume,
-				notification,
 				layout = wibox.layout.flex.vertical,
 			},
 			top = 3,
@@ -46,7 +44,7 @@ local anim = rubato.timed({
 	rate = 60,
 })
 
-local max_height = 78
+local max_height = 64
 
 anim:subscribe(function(pos)
 	actions.forced_height = pos
