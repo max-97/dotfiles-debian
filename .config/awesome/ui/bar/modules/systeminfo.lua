@@ -85,8 +85,6 @@ systeminfo.get_info_widget = function()
 	local widget_template = {
 		layout = wibox.layout.fixed.vertical,
 		spacing = 5,
-		shape = helpers.mkroundedrect(),
-		bg = beautiful.bg_contrast,
 	}
 
 	for _, sysinfo in ipairs(systeminfo.dict) do
