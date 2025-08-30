@@ -4,6 +4,9 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 
+# Load completions
+autoload -Uz compinit && compinit
+
 # Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -17,19 +20,16 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 zinit snippet OMZP::command-not-found
 
-# Load completions
-autoload -Uz compinit && compinit
-
 zinit cdreplay -q
 
 export PATH="$PATH:/opt/nvim/"
 export PATH="$PATH:/opt/obsidian/"
+
 export PATH="$PATH:/usr/libexec/docker/cli-plugins/"
 export PATH="$PATH:/home/max/.local/bin"
 export PATH="$PATH:/sbin"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.toml)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Keybindings
 bindkey -e
@@ -59,13 +59,16 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -a --color $realpath'
 alias ls='ls --color'
 
 # Shell integrations
-eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Use fd instead of fzf
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# fzf previews with eza and bat
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
 # Use fd for listing path candidates.
 # The first argument to the function is the base path to start traversal
@@ -81,10 +84,6 @@ _fzf_compgen_dir() {
 # Active fzf integration for git
 source ~/.local/share/fzf-git/fzf-git.sh
 
-# fzf previews with eza and bat
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
-export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
-
 # Advanced customization of fzf options via _fzf_comprun function
 # - The first argument to the function is the name of the command.
 # - You should make sure to pass the rest of the arguments to fzf.
@@ -99,6 +98,8 @@ _fzf_comprun() {
     *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
   esac
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Bat theme
 export BAT_THEME="Catppuccin Mocha"
