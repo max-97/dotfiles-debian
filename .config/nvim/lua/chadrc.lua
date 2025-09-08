@@ -11,7 +11,6 @@ local M = {
 			separator_style = "round",
 		},
 		tabufline = { enabled = false },
-		transparency = true,
 	},
 	mason = {
 		pkgs = {

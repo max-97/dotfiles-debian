@@ -22,6 +22,12 @@ end, { desc = "General Format file" })
 -- global lsp mappings
 -- loclist is used to display diagnostics (warning, errors and hints)
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP Diagnostic loclist" })
+map("n", "K", function()
+	vim.lsp.buf.hover({
+		border = "rounded",
+		close_events = { "BufLeave", "CursorMoved", "WinLeave", "LSPDetach" },
+	})
+end)
 
 -- tabufline
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
