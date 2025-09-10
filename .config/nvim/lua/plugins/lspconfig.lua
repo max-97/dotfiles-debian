@@ -52,7 +52,7 @@ return {
 			},
 		})
 
-		local servers = { "ruff" }
+		local servers = { "ruff", "postgres_lsp" }
 
 		-- lsps with default config
 		for _, lsp in ipairs(servers) do
