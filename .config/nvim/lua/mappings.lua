@@ -110,6 +110,9 @@ map("n", "<leader>cc", function()
 end, { desc = "blankline jump to current context" })
 
 -- custom mappings
-map({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "General Save File" })
+map({ "n", "i", "v" }, "<C-s>", function()
+	require("conform").format({ async = true, lsp_fallback = true })
+	vim.cmd("w")
+end, { desc = "General save file and format" })
 -- remape escape to escape and save
 map({ "i" }, "<Esc>", "<Esc><cmd>w<cr>", { desc = "Exit to Normal and Save" })
