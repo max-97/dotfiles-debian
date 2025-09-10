@@ -17,6 +17,7 @@ local M = {
 			"debugpy",
 			"ruff",
 			"codelldb",
+			"postgrestools",
 		},
 	},
 }
