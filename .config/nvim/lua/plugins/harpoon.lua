@@ -10,7 +10,7 @@ return {
 		harpoon:setup()
 
 		local map = vim.keymap.set
-		map("n", "<leader>a", function()
+		map("n", "<A-a>", function()
 			harpoon:list():add()
 		end, { desc = "add to harpoon" })
 		map("n", "<A-e>", function()
