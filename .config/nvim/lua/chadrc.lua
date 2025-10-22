@@ -14,11 +14,13 @@ local M = {
 	},
 	mason = {
 		pkgs = {
-			"debugpy",
-			"ruff",
-			"codelldb",
+			"debugpy", -- Python debugger
+			"ruff", -- Python LSP
+			"codelldb", -- C/C++, Rust debugger
 			"postgrestools",
-			"clangd",
+			"clangd", -- C/C++ LSP
+			"cmake-language-server", -- CMake LSP
+			"checkmake", -- Makefile Linter
 		},
 	},
 }
