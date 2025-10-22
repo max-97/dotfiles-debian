@@ -18,6 +18,7 @@ local M = {
 			"ruff",
 			"codelldb",
 			"postgrestools",
+			"clangd",
 		},
 	},
 }
