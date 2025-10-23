@@ -19,7 +19,7 @@ local M = {
 			"codelldb", -- C/C++, Rust debugger
 			"postgrestools",
 			"clangd", -- C/C++ LSP
-			"cmake-language-server", -- CMake LSP
+			-- "cmake-language-server", -- CMake LSP
 			"checkmake", -- Makefile Linter
 		},
 	},
