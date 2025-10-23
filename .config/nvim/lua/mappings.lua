@@ -28,6 +28,10 @@ map("n", "K", function()
 	})
 end, { desc = "Show hover window" })
 
+map("n", "<leader>a", function()
+	vim.lsp.buf.code_action()
+end, { desc = "Code action" })
+
 -- tabufline
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
 
