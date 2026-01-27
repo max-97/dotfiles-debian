@@ -49,13 +49,13 @@ echo "Install additional apps"
 echo "***"
 # install aditional apps
 sudo apt update
-sudo apt install -y brave-browser spotify-client docker-ce docker-ce-cli containerd.io docker-buildx-plugin \
+sudo apt install -y spotify-client docker-ce docker-ce-cli containerd.io docker-buildx-plugin \
     docker-compose-plugin
 
 # Neovim latest, as of 07.07.25 it is v0.11.2
 curl -LO https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.appimage
 chmod u+x nvim-linux-x86_64.appimage
-mkdir -p /opt/nvim
+sudo mkdir -p /opt/nvim
 sudo mv ./nvim.appimage /opt/nvim/nvim
 
 # lazydocker
