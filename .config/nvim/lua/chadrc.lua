@@ -17,9 +17,9 @@ local M = {
 			"debugpy", -- Python debugger
 			"ruff", -- Python LSP
 			"codelldb", -- C/C++, Rust debugger
-			"postgrestools",
+			"postgres-language-server",
 			"clangd", -- C/C++ LSP
-			-- "cmake-language-server", -- CMake LSP
+			"cmake-language-server", -- CMake LSP
 			"checkmake", -- Makefile Linter
 		},
 	},
