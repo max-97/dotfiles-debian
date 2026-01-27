@@ -21,6 +21,7 @@ local M = {
 			"clangd", -- C/C++ LSP
 			"cmake-language-server", -- CMake LSP
 			"checkmake", -- Makefile Linter
+			"mesonlsp", -- Meson LSP
 		},
 	},
 }

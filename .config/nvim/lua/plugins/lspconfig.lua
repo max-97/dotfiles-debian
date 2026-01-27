@@ -52,7 +52,7 @@ return {
 			},
 		})
 
-		local servers = { "ruff", "postgres_lsp", "clangd", "cmake" }
+		local servers = { "ruff", "postgres_lsp", "clangd", "mesonlsp" }
 
 		-- lsps with default config
 		for _, lsp in ipairs(servers) do
