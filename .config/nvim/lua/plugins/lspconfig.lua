@@ -52,7 +52,19 @@ return {
 			},
 		})
 
-		local servers = { "ruff", "postgres_lsp", "clangd", "mesonlsp" }
+		lspconfig.clangd.setup({
+			on_attach = nvlsp.on_attach,
+			on_init = nvlsp.on_init,
+			capabilities = nvlsp.capabilities,
+
+			cmd = {
+				"clangd",
+				"--compile-commands-dir=build",
+				"--clang-tidy",
+			},
+		})
+
+		local servers = { "ruff", "postgres_lsp", "mesonlsp" }
 
 		-- lsps with default config
 		for _, lsp in ipairs(servers) do
