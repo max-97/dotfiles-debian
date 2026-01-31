@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 get () {
-    path="/sys/class/hwmon/hwmon2/temp3_input"
+    path="/sys/class/hwmon/hwmon3/temp3_input"
 
     local max_temp=100
     local temp=$(cat $path)
