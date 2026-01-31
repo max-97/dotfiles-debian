@@ -1,5 +1,3 @@
-local term = require("nvchad.term")
-
 local function get_meson_build_dir()
 	local root = vim.fs.find("meson.build", {
 		upward = true,
@@ -53,21 +51,11 @@ local function find_executable(dir)
 end
 
 local function meson_compile(dir)
-	term.runner({
-		cmd = "cd " .. vim.fn.fnameescape(dir) .. " && meson compile",
-		pos = "sp",
-		size = 0.4,
-		id = "meson",
-	})
+	vim.cmd("!meson compile -C " .. vim.fn.fnameescape(dir))
 end
 
 local function run_executable(exectuable)
-	term.runner({
-		cmd = exectuable,
-		pos = "sp",
-		size = 0.4,
-		id = "meson",
-	})
+	vim.cmd("!" .. exectuable)
 end
 
 local map = vim.keymap.set
