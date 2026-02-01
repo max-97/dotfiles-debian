@@ -8,14 +8,12 @@ return {
 		},
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
 		local nvlsp = require("nvchad.configs.lspconfig")
-
 		-- default lua from nvchad + awesome wm setup
 		dofile(vim.g.base46_cache .. "lsp")
 		require("nvchad.lsp").diagnostic_config()
 
-		lspconfig.lua_ls.setup({
+		vim.lsp.config("lua_ls", {
 			on_attach = nvlsp.on_attach,
 			capabilities = nvlsp.capabilities,
 			on_init = nvlsp.on_init,
@@ -52,7 +50,7 @@ return {
 			},
 		})
 
-		lspconfig.clangd.setup({
+		vim.lsp.config("clangd", {
 			on_attach = nvlsp.on_attach,
 			on_init = nvlsp.on_init,
 			capabilities = nvlsp.capabilities,
@@ -68,7 +66,7 @@ return {
 
 		-- lsps with default config
 		for _, lsp in ipairs(servers) do
-			lspconfig[lsp].setup({
+			vim.lsp.config(lsp, {
 				on_attach = nvlsp.on_attach,
 				on_init = nvlsp.on_init,
 				capabilities = nvlsp.capabilities,
