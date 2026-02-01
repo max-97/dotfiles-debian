@@ -11,5 +11,6 @@ return {
 			end,
 			{ desc = "Open debugging sidebar" },
 		},
+		{ "<leader>dr", "<cmd>DapContinue<cr>", { desc = "Start or continue debugging" } },
 	},
 }
