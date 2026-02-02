@@ -8,6 +8,7 @@ return {
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")
+		dofile(vim.g.base46_cache .. "dap")
 		dapui.setup()
 		dap.listeners.after.event_initialized["dapui_config"] = function()
 			dapui.open()

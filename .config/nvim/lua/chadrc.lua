@@ -4,7 +4,11 @@
 
 ---@type ChadrcConfig
 local M = {
-	base46 = { theme = "catppuccin", transparency = true },
+	base46 = {
+		theme = "catppuccin",
+		transparency = true,
+		integrations = { "dap" },
+	},
 	ui = {
 		statusline = {
 			theme = "default",
