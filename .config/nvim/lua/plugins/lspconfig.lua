@@ -49,6 +49,7 @@ return {
 				},
 			},
 		})
+		vim.lsp.enable("lua_ls")
 
 		vim.lsp.config("clangd", {
 			on_attach = nvlsp.on_attach,
@@ -61,6 +62,7 @@ return {
 				"--clang-tidy",
 			},
 		})
+		vim.lsp.enable("clangd")
 
 		local servers = { "ruff", "postgres_lsp", "mesonlsp" }
 
@@ -71,6 +73,7 @@ return {
 				on_init = nvlsp.on_init,
 				capabilities = nvlsp.capabilities,
 			})
+			vim.lsp.enable(lsp)
 		end
 	end,
 }
