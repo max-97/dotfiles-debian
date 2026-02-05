@@ -4,7 +4,7 @@ terminal = "alacritty"
 -- TODO maybe use other explorer
 explorer = "nautilus"
 browser = "flatpak run com.brave.Browser"
-music = "spotify"
+music = "flatpak run com.spotify.Client"
 -- TODO install and setup rofi
 -- launcher = "rofi -show drun"
 editor = "nvim"
