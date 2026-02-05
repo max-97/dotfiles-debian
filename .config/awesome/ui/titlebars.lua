@@ -8,8 +8,8 @@ client.connect_signal("request::titlebars", function(c)
 	end
 
 	local titlebar = awful.titlebar(c, {
-		position = "left",
-		size = 36,
+		position = "top",
+		size = 32,
 	})
 
 	local titlebars_buttons = {
@@ -33,30 +33,33 @@ client.connect_signal("request::titlebars", function(c)
 		buttons = titlebars_buttons,
 	}
 
+	local top_bottom_margin = 10
+	local left_right_margin = 5
+
 	titlebar:setup({
+		buttons_loader,
+		buttons_loader,
 		{
-			helpers.apply_margin(awful.titlebar.widget.closebutton(c), {
-				left = 11,
-				right = 11,
-				top = 10,
-				bottom = 5,
+			helpers.apply_margin(awful.titlebar.widget.minimizebutton(c), {
+				left = left_right_margin,
+				right = left_right_margin,
+				top = top_bottom_margin,
+				bottom = top_bottom_margin,
 			}),
 			helpers.apply_margin(awful.titlebar.widget.maximizedbutton(c), {
-				left = 11,
-				right = 11,
-				top = 4,
-				bottom = 5,
+				left = left_right_margin,
+				right = left_right_margin,
+				top = top_bottom_margin,
+				bottom = top_bottom_margin,
 			}),
-			helpers.apply_margin(awful.titlebar.widget.minimizebutton(c), {
-				left = 11,
-				right = 11,
-				top = 4,
-				bottom = 5,
+			helpers.apply_margin(awful.titlebar.widget.closebutton(c), {
+				left = left_right_margin,
+				right = 10,
+				top = top_bottom_margin,
+				bottom = top_bottom_margin,
 			}),
-			layout = wibox.layout.fixed.vertical,
+			layout = wibox.layout.fixed.horizontal,
 		},
-		buttons_loader,
-		buttons_loader,
-		layout = wibox.layout.align.vertical,
+		layout = wibox.layout.align.horizontal,
 	})
 end)

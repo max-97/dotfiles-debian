@@ -8,7 +8,6 @@ local systeminfo = require("ui.bar.modules.systeminfo")
 local gettaglist = require("ui.bar.modules.tags")
 local systray_toggler = require("ui.bar.modules.systray_toggler")
 local dashboard_toggler = require("ui.bar.modules.dashboard_toggler")
-local actions = require("ui.bar.modules.actions")
 local clock = require("ui.bar.modules.date")
 local getlayoutbox = require("ui.bar.modules.layoutbox")
 local powerbutton = require("ui.bar.modules.powerbutton")
@@ -27,16 +26,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
 				nil,
 				{
 					{
+						nil,
 						{
 							systray_toggler,
 							dashboard_toggler,
-							spacing = 9,
+							spacing = 2,
 							layout = wibox.layout.fixed.vertical,
-						},
-						{
-							actions,
-							bottom = 6,
-							widget = wibox.container.margin,
 						},
 						{
 							clock,
@@ -79,13 +74,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		placement = function(d)
 			return awful.placement.left(d, {
 				margins = {
-					left = beautiful.useless_gap * 2,
+					left = 0,
 				},
 			})
 		end,
 	})
 
 	bar:struts({
-		left = beautiful.bar_width + beautiful.useless_gap * 2,
+		left = beautiful.bar_width,
 	})
 end)
