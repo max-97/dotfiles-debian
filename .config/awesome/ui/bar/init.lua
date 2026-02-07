@@ -64,13 +64,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
 	local bar = awful.popup({
 		visible = true,
 		ontop = false,
-		minimum_height = s.geometry.height - beautiful.useless_gap * 4,
+		minimum_height = s.geometry.height,
 		minimum_width = beautiful.bar_width,
 		bg = beautiful.bg_normal .. "00",
 		fg = beautiful.fg_normal,
 		widget = bar_content,
 		screen = s,
-		shape = helpers.mkroundedrect(12),
 		placement = function(d)
 			return awful.placement.left(d, {
 				margins = {
