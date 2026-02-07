@@ -77,10 +77,6 @@ end
 -- actions buttons
 local wifi = mkactionicon(beautiful.network_connected)
 
-wifi:add_button(awful.button({}, 1, function()
-	awful.spawn("bash " .. gfs.get_configuration_dir() .. "scripts/toggle-network.sh")
-end))
-
 awesome.connect_signal("network::connected", function(is_connected)
 	wifi.active = is_connected
 	wifi.icon = is_connected and beautiful.network_connected or beautiful.network_disconnected
