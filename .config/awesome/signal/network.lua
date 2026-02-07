@@ -2,7 +2,6 @@
 
 -- just works with NetworkManager
 
-local gears = require("gears")
 local awful = require("awful")
 local helpers = require("helpers")
 
@@ -22,18 +21,7 @@ function network.re_emit_ssid_signal()
 	end)
 end
 
-gears.timer({
-	timeout = 2,
-	call_now = true,
-	autostart = true,
-	callback = network.re_emit_connected_signal,
-})
-
-gears.timer({
-	timeout = 2,
-	call_now = true,
-	autostart = true,
-	callback = network.re_emit_ssid_signal,
-})
+network.re_emit_connected_signal()
+network.re_emit_ssid_signal()
 
 return network
