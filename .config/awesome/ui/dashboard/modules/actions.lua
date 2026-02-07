@@ -12,6 +12,7 @@ local gfs = gears.filesystem
 local util = require("ui.dashboard.modules.util")
 
 -- signals
+local network_signal = require("signal.network")
 local airplane_signal = require("signal.airplane")
 local redshift_signal = require("signal.redshift")
 local bluetooth_signal = require("signal.bluetooth")
@@ -75,11 +76,15 @@ local function mkactionicon(icon, font)
 end
 
 -- actions buttons
-local wifi = mkactionicon(beautiful.network_connected)
+local network = mkactionicon(beautiful.network_connected)
+
+network:add_button(awful.button({}, 1, function()
+	awful.spawn("nm-connection-editor")
+end))
 
 awesome.connect_signal("network::connected", function(is_connected)
-	wifi.active = is_connected
-	wifi.icon = is_connected and beautiful.network_connected or beautiful.network_disconnected
+	network.active = is_connected
+	network.icon = is_connected and beautiful.network_connected or beautiful.network_disconnected
 end)
 
 local volume = mkactionicon("")
@@ -173,7 +178,7 @@ return util.make_card({
 	{
 		{
 			{
-				wifi,
+				network,
 				volume,
 				airplane,
 				redshift,
