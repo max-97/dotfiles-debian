@@ -19,25 +19,23 @@ end
 
 function redshift.toggle()
 	redshift._invoke_script("toggle")
+	redshift._invoke_script("state", function(state)
+		awesome.emit_signal("redshift::active", state ~= "on")
+	end)
 end
 
 function redshift.enable()
 	redshift._invoke_script("enable")
+	awesome.emit_signal("redshift::active", true)
 end
 
 function redshift.disable()
 	redshift._invoke_script("disable")
+	awesome.emit_signal("redshift::active", false)
 end
 
-gears.timer({
-	timeout = 2,
-	call_now = true,
-	autostart = true,
-	callback = function()
-		redshift._invoke_script("state", function(state)
-			awesome.emit_signal("redshift::active", state == "on")
-		end)
-	end,
-})
+redshift._invoke_script("state", function(state)
+	awesome.emit_signal("redshift::active", state == "on")
+end)
 
 return redshift
