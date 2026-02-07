@@ -2,7 +2,6 @@
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local awful = require("awful")
-local helpers = require("helpers")
 
 local systeminfo = require("ui.bar.modules.systeminfo")
 local gettaglist = require("ui.bar.modules.tags")
