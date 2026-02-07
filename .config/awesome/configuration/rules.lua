@@ -1,6 +1,5 @@
 local ruled = require("ruled")
 local awful = require("awful")
-local helpers = require("helpers")
 
 local function setup_rules()
 	ruled.client.connect_signal("request::rules", function()
@@ -15,7 +14,6 @@ local function setup_rules()
 				placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 				maximized = false,
 				floating = false,
-				shape = helpers.mkroundedrect(12),
 			},
 		})
 
