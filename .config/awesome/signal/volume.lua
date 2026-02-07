@@ -2,7 +2,6 @@
 
 -- works with pipewire
 
-local gears = require("gears")
 local awful = require("awful")
 local gfs = require("gears.filesystem")
 local helpers = require("helpers")
@@ -37,18 +36,7 @@ function volume.toggle_muted()
 	end)
 end
 
-gears.timer({
-	timeout = 3,
-	call_now = true,
-	autostart = true,
-	callback = volume.re_emit_volume_value_signal,
-})
-
-gears.timer({
-	timeout = 3,
-	call_now = true,
-	autostart = true,
-	callback = volume.re_emit_muted_signal,
-})
+voluem.re_emit_muted_signal()
+volume.re_emit_volume_value_signal()
 
 return volume
