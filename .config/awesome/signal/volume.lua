@@ -36,7 +36,7 @@ function volume.toggle_muted()
 	end)
 end
 
-voluem.re_emit_muted_signal()
+volume.re_emit_muted_signal()
 volume.re_emit_volume_value_signal()
 
 return volume
