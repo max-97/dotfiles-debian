@@ -6,6 +6,16 @@
 local M = {
 	base46 = {
 		theme = "catppuccin",
+		hl_override = {
+			Comment = {
+				italic = true,
+				fg = "#bac2de", -- Subtext 1
+			},
+			["@comment"] = {
+				italic = true,
+				fg = "#bac2de", -- Subtext 1
+			},
+		},
 		transparency = true,
 		integrations = { "dap" },
 	},
