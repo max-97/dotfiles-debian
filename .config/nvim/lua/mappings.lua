@@ -116,12 +116,12 @@ end, { desc = "blankline jump to current context" })
 -- custom mappings
 map({ "n", "i", "v" }, "<C-s>", function()
 	require("conform").format({ async = true, lsp_fallback = true })
-	vim.cmd("w")
-end, { desc = "General save file and format" })
+	vim.cmd("wall")
+end, { desc = "General save all files and format" })
 -- remape escape to escape and save
 map({ "i" }, "<Esc>", function()
 	if vim.bo.buftype == "" then
-		vim.cmd("write")
+		vim.cmd("wall")
 	end
 	vim.cmd("stopinsert")
 end, { desc = "Exit to Normal and Save" })
