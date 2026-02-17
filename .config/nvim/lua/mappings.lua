@@ -119,4 +119,9 @@ map({ "n", "i", "v" }, "<C-s>", function()
 	vim.cmd("w")
 end, { desc = "General save file and format" })
 -- remape escape to escape and save
-map({ "i" }, "<Esc>", "<Esc><cmd>w<cr>", { desc = "Exit to Normal and Save" })
+map({ "i" }, "<Esc>", function()
+	if vim.bo.buftype == "" then
+		vim.cmd("write")
+	end
+	vim.cmd("stopinsert")
+end, { desc = "Exit to Normal and Save" })
