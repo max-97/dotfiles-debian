@@ -5,7 +5,7 @@
 	name = Max Braun
 [core]
 	editor = nvim
-	pager = delta
+	pager = bat --paging=always
 
 [interactive]
 	diffFilter = delta --color-only
