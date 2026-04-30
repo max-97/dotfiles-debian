@@ -1,3 +1,27 @@
+local on_attach = function(client, bufnr)
+	local nvlsp = require("nvchad.configs.lspconfig")
+	nvlsp.on_attach(client, bufnr)
+
+	if client.server_capabilities.inlayHintProvider then
+		vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+	end
+
+	if client.server_capabilities.codeLensProvider then
+		vim.keymap.set(
+			"n",
+			"<leader>lcld",
+			"<Cmd>lua vim.lsp.codelens.refresh()<CR>",
+			{ buffer = bufnr, desc = "LSP Refresh Codelens" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>lclr",
+			"<Cmd>lua vim.lsp.codelens.run()<CR>",
+			{ buffer = bufnr, desc = "LSP Run Codelens" }
+		)
+	end
+end
+
 return {
 	"neovim/nvim-lspconfig",
 	opts = {
@@ -14,7 +38,7 @@ return {
 		require("nvchad.lsp").diagnostic_config()
 
 		vim.lsp.config("lua_ls", {
-			on_attach = nvlsp.on_attach,
+			on_attach = on_attach,
 			capabilities = nvlsp.capabilities,
 			on_init = nvlsp.on_init,
 			settings = {
@@ -52,7 +76,7 @@ return {
 		vim.lsp.enable("lua_ls")
 
 		vim.lsp.config("clangd", {
-			on_attach = nvlsp.on_attach,
+			on_attach = on_attach,
 			on_init = nvlsp.on_init,
 			capabilities = nvlsp.capabilities,
 
@@ -64,12 +88,12 @@ return {
 		})
 		vim.lsp.enable("clangd")
 
-		local servers = { "ruff", "postgres_lsp", "mesonlsp" }
+		local servers = { "ruff", "postgres_lsp", "mesonlsp", "python-lsp-server" }
 
 		-- lsps with default config
 		for _, lsp in ipairs(servers) do
 			vim.lsp.config(lsp, {
-				on_attach = nvlsp.on_attach,
+				on_attach = on_attach,
 				on_init = nvlsp.on_init,
 				capabilities = nvlsp.capabilities,
 			})
