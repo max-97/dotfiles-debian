@@ -114,7 +114,7 @@ map("n", "<leader>cc", function()
 end, { desc = "blankline jump to current context" })
 
 -- custom mappings
-map({ "n", "i", "v" }, "<C-s>", function()
+map({ "n", "v" }, "<C-s>", function()
 	require("conform").format({ async = true, lsp_fallback = true })
 	vim.cmd("wall")
 end, { desc = "General save all files and format" })
