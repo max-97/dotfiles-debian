@@ -29,7 +29,8 @@ local M = {
 	mason = {
 		pkgs = {
 			"debugpy", -- Python debugger
-			"ruff", -- Python LSP
+			"ruff", -- Python Linter and Formatter
+			"python-lsp-server", -- Python LSP
 			"codelldb", -- C/C++, Rust debugger
 			"postgres-language-server",
 			"clangd", -- C/C++ LSP
