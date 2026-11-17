@@ -105,6 +105,7 @@ _fzf_comprun() {
 export BAT_THEME="Catppuccin Mocha"
 
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias lg="lazygit"
 
 if command -v tmux >/dev/null && [ -z "$TMUX" ]; then
     tmux attach-session -t default || tmux new-session -s default
